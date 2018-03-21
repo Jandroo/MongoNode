@@ -5,7 +5,17 @@ var MongoClient = require('mongodb').MongoClient;
 var mongoUrl = "mongodb://localhost:27017";
 
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+	MongoClient.connect(mongoUrl, function(err, client) {
+	  if (err) throw err;
+	  var db = client.db("videoJocs");
+
+	  db.collection('jocs').find({}).toArray(function (findErr, result) {
+		if (findErr) throw findErr;
+	    client.close();
+
+	    res.render('jocs/mostrarTodos', { jocs: result});
+	  	});
+ 	});
 });
 
 
