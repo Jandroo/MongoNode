@@ -1,0 +1,10 @@
+<a href="/jocs/crear">Añadir</a>
+<% if (typeof jocs !== 'undefined') { %>
+	<ul>
+	  <% jocs.forEach(function(jocs){ %>
+	  	<li>
+	    <a href="/jocs/ver/<%= jocs._id %>"><%= jocs.titulo %></a>
+	    </li>
+	  <% }); %>
+	</ul>
+<% } %>

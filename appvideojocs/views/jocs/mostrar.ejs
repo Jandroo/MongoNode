@@ -1,0 +1,10 @@
+<p><a href="/jocs"><- Atras</a></p>
+<% if (typeof jocs !== 'undefined') { %>
+<form>
+	<a href="/jocs/editar/<%= jocs._id %>">Editar</a>
+	<a href="/jocs/borrar/<%= jocs._id %>">Eliminar</a>
+	<p>Titulo: <span><%= jocs.titulo %></span></p>
+	<p>Año: <span><%= jocs.año %></span></p>
+	<p>Plataforma: <span><%= jocs.plataforma %></span></p>
+</form>
+<% } %>
