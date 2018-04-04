@@ -1,21 +1,23 @@
-Esqueleto de una aplicación web tipo CRUD mínima con NodeJS
-0) BBDD encendida
+# Esqueleto de una aplicación web tipo CRUD mínima con NodeJS
 
-# Y que el servidor de bases de datos de mongo esté funcionando:
-	sudo systemctl status mongod
+# 0) BBDD encendida
 
-# Para poner en marcha:
-	sudo systemctl start mongod
+	# Y que el servidor de bases de datos de mongo esté funcionando:
+		sudo systemctl status mongod
 
-1) Para testear esta aplicación, es necesario que exista la bbdd 'videoJuegos':
+	# Para poner en marcha:
+		sudo systemctl start mongod
 
-mongorestore -d videoJuegos ./bbdd_data/db_videoJuegos/
 
-2) Recuerde que el nodejs requiere que hayan los paquetes instalados:
+# 1) Para testear esta aplicación, es necesario que exista la bbdd 'videoJuegos':
+	mongorestore -d videoJuegos ./bbdd_data/db_videoJuegos/
+	
 
-npm install
+# 2) Recuerde que el nodejs requiere que hayan los paquetes instalados:
+	npm install
 
-3) Ejecutar
 
-./bin/www
-http://localhost:3000
+# 3) Ejecutar
+	./bin/www
+	http://localhost:3000
+
