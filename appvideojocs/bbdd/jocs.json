@@ -1,0 +1,4 @@
+{"_id":{"$oid":"5aa018ecd4f2fc424d168ec9"},"titulo":"God of War","año":"2005","plataforma":"PS2"}
+{"_id":{"$oid":"5aa0194dd4f2fc424d168ecb"},"titulo":"Call of Duty","año":2003.0,"plataforma":"PS2"}
+{"_id":{"$oid":"5aaac2b0c11f1a4951b52b26"},"titulo":"GTA V","año":"2015","plataforma":"PS3"}
+{"_id":{"$oid":"5ab3fbfd4070951aed907a4d"},"titulo":"Aliens Vs Predator","año":"2010","plataforma":"PS3"}
