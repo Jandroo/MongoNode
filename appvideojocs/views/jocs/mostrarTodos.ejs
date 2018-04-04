@@ -7,6 +7,17 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style type="text/css">
+    #myInput {
+        background-position: 10px 10px;
+        background-repeat: no-repeat;
+        width: 50%;
+        font-size: 16px;
+        padding: 12px 20px 12px 40px;
+        border: 1px solid #ddd;
+        margin-bottom: 12px;
+      }
+  </style>
 </head>
 <body>
 <nav class="navbar navbar-inverse">
@@ -22,15 +33,37 @@
 </nav>
 
 <div class="container text-center">
-  <h2><b><u>Llistat de videojocs</u></b></h2>      
+  <h2><b><u>Llistat de videojocs</u></b></h2> 
+  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name"> 
     <% if (typeof jocs !== 'undefined') { %>
+    <ul id="myUl">
   	<% jocs.forEach(function(jocs){ %>
   		<li>
     	<a href="/jocs/ver/<%= jocs._id %>" style="font-size: 20px;"><%= jocs.titulo %></a>
     	</li>
   		<% }); %>
+    </ul>
 	<% } %>
 </div>
 
+<script>
+function myFunction() {
+  var input, filter, li, a, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myUl");
+  li = ul.getElementsByTagName("li");
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+    if (a) {
+      if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        li[i].style.display = "";
+      } else {
+        li[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
 </body>
 </html>

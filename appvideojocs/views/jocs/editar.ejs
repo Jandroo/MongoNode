@@ -1,9 +1,51 @@
-<a href="/jocs/ver/<%= jocs._id %>"><- Atras</a>
-<% if (typeof jocs !== 'undefined') { %>
-	<form action="/jocs/editar/<%= jocs._id %>" method="post">
-		<p>Titulo: <input type="text" name="titulo" value="<%= jocs.titulo %>" required></p>
-		<p>Año: <input type="text" name="any" value="<%= jocs.año %>" required></p>
-		<p>Plataforma: <input type="text" name="plataforma" value="<%= jocs.plataforma %>" required></p>
-		<input type="submit" value="Actualizar">
-	</form>
-<% } %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>VideoJocs</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  	.inline{
+  		display: inline-block;
+  	}
+</style>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="">VideoJocs</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/">INICI</a></li>
+      <li><a href="/jocs/crear">AFEGIR</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="well well-sm">
+                	<fieldset>
+					<% if (typeof jocs !== 'undefined') { %>
+						<form class="text-center" class="inline" action="/jocs/editar/<%= jocs._id %>" method="post">
+							<p>Titulo: <input type="text" name="titulo" value="<%= jocs.titulo %>" required></p>
+							<p>Año: <input type="text" name="any" value="<%= jocs.año %>" required></p>
+							<p>Plataforma: <input type="text" name="plataforma" value="<%= jocs.plataforma %>" required></p>
+                        	<button class="btn btn-success" type="submit">Actualizar</button>
+						</form>
+					<% } %>
+						<form class="form-horizontal text-center" class="inline" action="/jocs" method="get">
+                        	<button class="btn btn-default text" type="submit"> <- Enrere</button>
+                    	</form>
+					</fieldset>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

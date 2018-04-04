@@ -1,10 +1,59 @@
-<p><a href="/jocs"><- Atras</a></p>
-<% if (typeof jocs !== 'undefined') { %>
-<form>
-	<a href="/jocs/editar/<%= jocs._id %>">Editar</a>
-	<a href="/jocs/borrar/<%= jocs._id %>">Eliminar</a>
-	<p>Titulo: <span><%= jocs.titulo %></span></p>
-	<p>Año: <span><%= jocs.año %></span></p>
-	<p>Plataforma: <span><%= jocs.plataforma %></span></p>
-</form>
-<% } %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>VideoJocs</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  	.inline{
+  		display: inline-block;
+  	}
+</style>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="">VideoJocs</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/">INICI</a></li>
+      <li><a href="/jocs/crear">AFEGIR</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="well well-sm">
+                <form class="form-horizontal text-center">
+                    <fieldset>
+                        <legend class="text-center header">Joc</legend>
+                    	<% if (typeof jocs !== 'undefined') { %>
+						<form>
+							<p>Titulo: <span><%= jocs.titulo %></span></p>
+							<p>Año: <span><%= jocs.año %></span></p>
+							<p>Plataforma: <span><%= jocs.plataforma %></span></p>
+						</form>
+						<% } %>
+						<form class="inline" action="/jocs" method="get">
+                        <button class="btn btn-default text" type="submit"> <- Enrere</button>
+                    	</form>
+                    	<form class="inline" action="/jocs/editar/<%= jocs._id %>" method="get">
+                       	<button class="btn btn-warning text" type="submit" onclick="window.location.href='/jocs/editar>">Editar</button>
+                   		</form>
+                   		<form class="inline" action="/jocs/borrar/<%= jocs._id %>" method="get">
+						<button class="btn btn-danger text" type="submit" onclick="window.location.href='/jocs/borrar">Eliminar</button>
+						</form>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

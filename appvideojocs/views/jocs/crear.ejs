@@ -1,8 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>VideoJocs</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="">VideoJocs</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/">INICI</a></li>
+      <li><a href="/jocs/crear">AFEGIR</a></li>
+    </ul>
+  </div>
+</nav>
 
-<p><a href="/jocs"><- Atras</a></p>
-<form action="/jocs/crear" method="post">
-	<p>Titulo: <input type="text" name="titulo" required></p>
-	<p>Año: <input type="text" name="any" required></p>
-	<p>Plataforma: <input type="text" name="plataforma" required></p>
-	<input type="submit" value="Añadir">
-</form>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="well well-sm">
+                <form class="form-horizontal" action="/jocs/crear" method="post">
+                    <fieldset>
+                        <legend class="text-center header">Nou Joc</legend>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-6">
+                                Titul: <input id="fname" name="titulo" type="text" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-6">
+                                Any: <input id="lname" name="any" type="text" class="form-control" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
+                            <div class="col-md-6">
+                                Plataforma: <input id="email" name="plataforma" type="text" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                        	<div class="col-md-12 text-center">
+		                        <button class="btn btn-warning text" type="submit" onclick="window.location.href='/jocs'"> <- Enrere</button>
+								<button class="btn btn-success" type="submit">Afegir</button>
+						 	</div>
+						</div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
