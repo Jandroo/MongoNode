@@ -9,8 +9,8 @@
 		sudo systemctl start mongod
 
 
-# 1) Para testear esta aplicación, es necesario que exista la bbdd 'videoJuegos':
-	mongorestore -d videoJuegos ./bbdd_data/db_videoJuegos/
+# 1) Para testear esta aplicación, es necesario que exista la bbdd 'videoJocs':
+	mongorestore -d videoJocs ./bbdd_data/db_videoJocs/
 	
 
 # 2) Recuerde que el nodejs requiere que hayan los paquetes instalados:
