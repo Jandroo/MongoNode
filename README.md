@@ -10,7 +10,7 @@
 
 
 # 1) Para testear esta aplicación, es necesario que exista la bbdd 'videoJocs':
-	mongorestore -d videoJocs ./bbdd_data/db_videoJocs/
+	mongorestore -d videoJocs ./bbdd/dump/videoJocs
 	
 
 # 2) Recuerde que el nodejs requiere que hayan los paquetes instalados:
